@@ -13,13 +13,4 @@ class handler(BaseHTTPRequestHandler):
         publish_date = find_date(url, original_date=True) # outputformat='%Y-%m-%dT%H:%M:%S%z'
         self.wfile.write(publish_date.encode())
 
-        # # WORKING
-        # query_params =  urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
-        # self.wfile.write(json.dumps(query_params, separators=(',', ':')).encode())
-        # # result = {"url":["http://gawker.com/men-dressed-as-ninjas-rob-millionaire-and-companion-in-1570983668"]}
-
-        
-        # WORKING
-        # self.wfile.write(json.dumps(urllib.parse.parse_qs(self.path), separators=(',', ':')).encode())
-        # result = {"/api?url":["http://gawker.com/men-dressed-as-ninjas-rob-millionaire-and-companion-in-1570983668"]}
         return
